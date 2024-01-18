@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Fort\Exception;
+namespace Velstack\Exception;
 
 
-use Fort\Handler\ErrorHandler;
+use Velstack\Handler\ErrorHandler;
 
 class DBException extends ErrorHandler
 {

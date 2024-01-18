@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\Exception;
+namespace Velstack\Exception;
 
 
 class RouteNotFoundException extends \Exception

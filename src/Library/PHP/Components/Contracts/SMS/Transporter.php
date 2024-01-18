@@ -1,8 +1,8 @@
 <?php
 
 
-namespace Fort\PHP\Components\Contracts\SMS;
-use Fort\PHP\Builders\SMS\smsDriver as Provider;
+namespace Velstack\PHP\Components\Contracts\SMS;
+use Velstack\PHP\Builders\SMS\smsDriver as Provider;
 
 class Transporter extends Provider
 {

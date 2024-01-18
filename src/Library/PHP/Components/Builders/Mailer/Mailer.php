@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Fort\PHP\Builders\Mailer;
+namespace Velstack\PHP\Builders\Mailer;
 
 
 
-use Fort\PHP\Builders\Application;
-use Fort\PHP\Http\Response;
+use Velstack\PHP\Builders\Application;
+use Velstack\PHP\Http\Response;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;

@@ -3,13 +3,13 @@
 
 
 
-namespace Fort\PHP\Contracts\Database;
+namespace Velstack\PHP\Contracts\Database;
 
 use Exception;
-use Fort\Exception\LogicException;
-use Fort\PHP\Builders\Database\BuildQueries;
-use Fort\PHP\Builders\Database\QueryBuilders as Builder;
-use Fort\PHP\Contracts\Http\HttpRequests as HttpRequest;
+use Velstack\Exception\LogicException;
+use Velstack\PHP\Builders\Database\BuildQueries;
+use Velstack\PHP\Builders\Database\QueryBuilders as Builder;
+use Velstack\PHP\Contracts\Http\HttpRequests as HttpRequest;
 
 use PDO;
 
@@ -306,7 +306,7 @@ abstract class Fort extends BuildQueries
 
     /**
      *
-     * Sum all all records in the specified column.
+     * Sum all records in the specified column.
      * @param $column
      * @return array
      */

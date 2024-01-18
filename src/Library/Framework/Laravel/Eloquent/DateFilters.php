@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\Support\Laravel\Eloquent;
+namespace Velstack\Support\Laravel\Eloquent;
 use Carbon\Carbon;
 
 

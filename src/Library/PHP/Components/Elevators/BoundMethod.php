@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Fort\PHP\Components\Elevators;
+namespace Velstack\PHP\Components\Elevators;
 
 use Closure;
-use Fort\PHP\Elevators\BindingResolutionException;
+use Velstack\PHP\Elevators\BindingResolutionException;
 use InvalidArgumentException;
 use ReflectionFunction;
 use ReflectionMethod;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\PHP\Contracts\Database;
+namespace Velstack\PHP\Contracts\Database;
 
 
 use PDO;

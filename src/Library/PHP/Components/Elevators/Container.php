@@ -1,15 +1,15 @@
 <?php
 
-namespace Fort\PHP\Elevators;
+namespace Velstack\PHP\Elevators;
 
 use ArrayAccess;
 use Closure;
 use Exception;
-use Fort\PHP\Components\Elevators\EntryNotFoundException;
-use Fort\PHP\Components\Elevators\Util;
-use Fort\PHP\Elevators\BindingResolutionException;
-use Fort\PHP\Elevators\CircularDependencyException;
-use Fort\PHP\Elevators\ContainerFace as ContainerContract;
+use Velstack\PHP\Components\Elevators\EntryNotFoundException;
+use Velstack\PHP\Components\Elevators\Util;
+use Velstack\PHP\Elevators\BindingResolutionException;
+use Velstack\PHP\Elevators\CircularDependencyException;
+use Velstack\PHP\Elevators\ContainerFace as ContainerContract;
 use LogicException;
 use ReflectionClass;
 use ReflectionException;

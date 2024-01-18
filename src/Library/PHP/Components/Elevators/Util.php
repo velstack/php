@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\PHP\Components\Elevators;
+namespace Velstack\PHP\Components\Elevators;
 
 
 use Closure;

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Fort\PHP\Builders\Database;
+namespace Velstack\PHP\Builders\Database;
 
-use Fort\PHP\Contracts\Database\Processor;
+use Velstack\PHP\Contracts\Database\Processor;
 use PDO;
 use PDOStatement;
 

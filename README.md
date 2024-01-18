@@ -3,7 +3,7 @@
 <a href="https://packagist.org/packages/fort/php"> <img alt="Packagist Version (custom server)" src="https://img.shields.io/packagist/v/fort/php"></a>
 <img alt="Packagist Downloads (custom server)" src="https://img.shields.io/packagist/dt/fort/php">
 
-<img alt="GitHub" src="https://img.shields.io/github/license/sammyfort/FortPHP">
+<img alt="GitHub" src="https://img.shields.io/github/license/sammyfort/VelstackPHP">
 </p>
 
 ## Installation
@@ -155,7 +155,7 @@ DB_PASSWORD=sammyabc
 Test if the databases was successfully connected
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 DB::connect();
 
@@ -166,7 +166,7 @@ DB::connect();
 Insert or create a new record in your database
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 use Carbon\Carbon;
 
 DB::insert('users', [
@@ -183,7 +183,7 @@ DB::insert('users', [
 Update a specific record in your database.
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 use Carbon\Carbon;
 
 DB::update('users', 1, [
@@ -201,7 +201,7 @@ DB::update('users', 1, [
 Start database transactions.
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
  
 
 public function createInvoice()
@@ -226,7 +226,7 @@ public function createInvoice()
 Run queries to your database.
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 $unpaidOrders = DB::table('orders')
   ->where('payment_status', '=', 'unpaid')
@@ -242,7 +242,7 @@ foreach ($unpaidOrders as $item){
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 $items = DB::rawQuery("SELECT users.id FROM users, 
  INNER JOIN orders ON users.id = orders.user_id")->get();
@@ -256,7 +256,7 @@ foreach ($items as $item){
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 $adult = DB::table('users')
   ->select(['name', 'age'])
@@ -273,7 +273,7 @@ foreach ($adult as $individual){
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 DB::table('invoices')->all();
 // @returns all invoices
@@ -283,7 +283,7 @@ DB::table('invoices')->all();
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 DB::table('users')->where('email', '=','sam@example.com')->first();
 // @returns the record in the query set
@@ -293,7 +293,7 @@ DB::table('users')->where('email', '=','sam@example.com')->first();
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 DB::table('invoices')->where('amount_paid', '<', 1)->get();
 ```
@@ -302,7 +302,7 @@ DB::table('invoices')->where('amount_paid', '<', 1)->get();
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 DB::table('invoices')->where('amount_paid', '<', 1)
   ->orWhere('amount_paid', '=', false)
@@ -313,7 +313,7 @@ DB::table('invoices')->where('amount_paid', '<', 1)
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 DB::table('invoices')->sum('amount_paid');
 // @returns (int|float) a sum of the specified column
@@ -324,7 +324,7 @@ DB::table('invoices')->sum('amount_paid');
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
   DB::table('orders')->count();
   // @returns total number of orders
@@ -334,7 +334,7 @@ use Fort\PHP\Support\DB;
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 DB::table('invoices')->max('amount');
 // @returns (int|float) the highest number in the column
@@ -345,7 +345,7 @@ DB::table('invoices')->max('amount');
 
 ```php
 <?php
-use Fort\PHP\Support\DB;
+use Velstack\PHP\Support\DB;
 
 DB::table('invoices')->min('amount');
 // @returns (int|float) the smallest number in the column
@@ -358,7 +358,7 @@ DB::table('invoices')->min('amount');
 
 ```php
 <?php
- use Fort\PHP\Support\Http;
+ use Velstack\PHP\Support\Http;
  
  Http::post('https://api.velstack.com/send',[$data],
             ["Accept" => "application/json", "Authorization" => "Bearer API_KEY}"];
@@ -369,7 +369,7 @@ DB::table('invoices')->min('amount');
 
 ```php
 <?php
- use Fort\PHP\Support\Http;
+ use Velstack\PHP\Support\Http;
  
  Http::get('https://api.velstack.com/resource', 
             ["Accept" => "application/json", "Authorization" => "Bearer API_KEY}"],
@@ -381,7 +381,7 @@ DB::table('invoices')->min('amount');
 
 ```php
 <?php
- use Fort\PHP\Support\Http;
+ use Velstack\PHP\Support\Http;
  
  Http::put('https://api.velstack.com/resource', [$data],
              ["Accept" => "application/json", "Authorization" => "Bearer API_KEY}"],
@@ -392,7 +392,7 @@ DB::table('invoices')->min('amount');
 
 ```php
 <?php
- use Fort\PHP\Support\Http;
+ use Velstack\PHP\Support\Http;
  
  Http::delete('https://api.velstack.com/resource', 
              ["Accept" => "application/json", "Authorization" => "Bearer API_KEY}"],
@@ -403,7 +403,7 @@ DB::table('invoices')->min('amount');
 
 ```php
 <?php
- use Fort\PHP\Support\Http;
+ use Velstack\PHP\Support\Http;
  
  Http::asPostMultipart('https://api.velstack.com/send', [$data],
              ["Accept" => "application/json", "Authorization" => "Bearer API_KEY"]
@@ -417,7 +417,7 @@ DB::table('invoices')->min('amount');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
 
  $haystack = array('FORT', 'Everette', 'Mike');
  // returns true if the needle exist in case insensitive, false otherwise
@@ -429,7 +429,7 @@ DB::table('invoices')->min('amount');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
 
 $slice = Str::contains('I was raised in Ghana', 'Ghana');
 // 'true'
@@ -440,7 +440,7 @@ $slice = Str::contains('I was raised in Ghana', 'Ghana');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
 
 $string = Str::containsAll('My dad is from UK but i live in the US', ['UK', 'US']);
 
@@ -452,7 +452,7 @@ $string = Str::containsAll('My dad is from UK but i live in the US', ['UK', 'US'
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
 
 $slice = Str::after('His name is fort', 'His name');
 // ' is fort'
@@ -463,7 +463,7 @@ $slice = Str::after('His name is fort', 'His name');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
 
  $slice = Str::afterLast('app\Http\Controllers\Controller', '\\');
  // 'Controller'
@@ -474,7 +474,7 @@ $slice = Str::after('His name is fort', 'His name');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
 
 $slice = Str::before('He is married', 'married');
 // 'He is'
@@ -485,7 +485,7 @@ $slice = Str::before('He is married', 'married');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
 
 $slice = Str::beforeLast('He is married', 'is');
 // 'He'
@@ -496,7 +496,7 @@ $slice = Str::beforeLast('He is married', 'is');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
 
 $slice = Str::between('He was born in March', 'He', 'March');
 // 'was born in'
@@ -507,7 +507,7 @@ $slice = Str::between('He was born in March', 'He', 'March');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $string = 'Transporter is a brilliant !';
@@ -522,7 +522,7 @@ $replaced = Str::replace('brilliant', 'genius', $string);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $string = 'Transporter !';
@@ -537,7 +537,7 @@ $char = Str::charAt($string, 3);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $string = 'Everette is 1 year old';
@@ -552,7 +552,7 @@ $string = Str::endsWith($string, 'old');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $string = 'Everette is 1 year old';
@@ -568,7 +568,7 @@ The Str::is method determines if a given string matches a given pattern. Asteris
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $matches = Str::is('foo*', 'foobar');
@@ -585,7 +585,7 @@ $matches = Str::is('baz*', 'foobar');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $isUuid = Str::isUuid('a0a2a2d2-0b87-4a18-83f2-2529882be2de');
@@ -602,7 +602,7 @@ $isUuid = Str::isUuid('laravel');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $isUuid = Str::length('Velstack');
@@ -615,7 +615,7 @@ $isUuid = Str::length('Velstack');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
   Str::words('Though he came, he could not make it.', 3, ' >>>');
  
@@ -627,7 +627,7 @@ $isUuid = Str::length('Velstack');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
   Str::words('He was born in July');
  
@@ -639,7 +639,7 @@ $isUuid = Str::length('Velstack');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $truncated = Str::limit('He is a good man', 4, ' ...');
@@ -652,7 +652,7 @@ $truncated = Str::limit('He is a good man', 4, ' ...');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $padded = Str::padBoth('sammy', 10, '_');
  
@@ -667,7 +667,7 @@ $padded = Str::padBoth('James', 10);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $padded = Str::padLeft('sammy', 6, '@');
@@ -683,7 +683,7 @@ $padded = Str::padLeft('sammy', 6);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  $padded = Str::padRight('sammy', 10, '-');
  
@@ -698,7 +698,7 @@ $padded = Str::padRight('sammy', 10);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $random = Str::random(5);
 
@@ -709,7 +709,7 @@ $random = Str::random(5);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $output = Str::uuid();
 
@@ -722,7 +722,7 @@ $output = Str::uuid();
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $isAscii = Str::isAscii('Accra');
  
@@ -738,7 +738,7 @@ $isAscii = Str::isAscii('ü');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $string = Str::isUuid('a0a2a2d2-0b87-4a18-83f2-2529882be2de');
  
@@ -754,7 +754,7 @@ $string = Str::isUuid('Accra');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $converted = Str::upper('fort');
@@ -766,7 +766,7 @@ $converted = Str::upper('fort');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $converted = Str::lower('FORT');
@@ -778,7 +778,7 @@ $converted = Str::lower('FORT');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $converted = Str::title('how to make money from home');
@@ -790,7 +790,7 @@ $converted = Str::title('how to make money from home');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $converted = Str::slug('how to make money from home','-');
@@ -802,7 +802,7 @@ $converted = Str::slug('how to make money from home','-');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $output = Str::snake('FootBall', '_');
@@ -814,7 +814,7 @@ $output = Str::snake('FootBall', '_');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  $output = Str::studly('foo_bar');
  
@@ -825,7 +825,7 @@ $output = Str::snake('FootBall', '_');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $output = Str::kebab('fooBar');
@@ -837,7 +837,7 @@ $output = Str::kebab('fooBar');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $string = Str::mask('samuelfort@example.com', '*', -15, 3);
@@ -852,7 +852,7 @@ value:
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $adjusted = Str::start('sammy_fort', '@');
  
@@ -867,7 +867,7 @@ $adjusted = Str::start('@fortameyaw', '@');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $reversed = Str::reverse('Hello');
  
@@ -878,7 +878,7 @@ $reversed = Str::reverse('Hello');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
  
 $converted = Str::substr('The Symfony PHP Framework', 4, 7);
@@ -890,7 +890,7 @@ $converted = Str::substr('The Symfony PHP Framework', 4, 7);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $count = Str::substrCount('If you like ice cream, you will like snow cones.', 'like');
  
@@ -901,7 +901,7 @@ $count = Str::substrCount('If you like ice cream, you will like snow cones.', 'l
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $result = Str::substrReplace('1300', ':', 2);
 // 13:
@@ -914,7 +914,7 @@ $result = Str::substrReplace('1300', ':', 2, 0);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $string  = 'He is lazy';
 
@@ -927,7 +927,7 @@ $output = Str::replaceFirst('He', 'Tom', $string);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $string  = 'Kwaku is a handsome boy';
 
@@ -940,7 +940,7 @@ $output = Str::replaceLast('a', 'the', $string);
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $output = Str::lcfirst('Handsome');
  
@@ -951,7 +951,7 @@ $output = Str::lcfirst('Handsome');
 
  ```php
 <?php
- use Fort\PHP\Str;
+ use Velstack\PHP\Str;
  
 $output = Str::ucfirst('beautiful');
  
@@ -964,7 +964,7 @@ $output = Str::ucfirst('beautiful');
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['Transporter'=> 3, 'Phil'=> 0, 'Ever'=> 1];
 
@@ -977,7 +977,7 @@ print_r(Arr::maximum($array));
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['Transporter'=> 3, 'Phil'=> 1, 'Ever'=> 0];
 
@@ -993,7 +993,7 @@ false otherwise.
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['Transporter', 'Phil', 'Ever'];
 
@@ -1006,7 +1006,7 @@ $array = ['Transporter', 'Phil', 'Ever'];
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['Transporter' => 1, 'Phil'=> 2, 'Ever' => 3];
 
@@ -1025,7 +1025,7 @@ $array = "fort";
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = [0, null];
  
@@ -1038,7 +1038,7 @@ $filtered = Arr::whereNotNull($array);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = [100, '200', '300', '400', '500'];
  
@@ -1053,7 +1053,7 @@ $filtered = Arr::where($array, function ($value, $key) {
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = [1, 15, 35];
  
@@ -1068,7 +1068,7 @@ $first = Arr::first($array, function ($value, $key) {
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = [1, 15, 35, 40];
  
@@ -1085,7 +1085,7 @@ $first = Arr::last($array, function ($value, $key) {
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $string = 'PHP is fun';
  
@@ -1100,7 +1100,7 @@ The Arr::shuffle method randomly shuffles the items in the array:
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = Arr::add(['name' => 'Desk'], 'price', 100);
  
@@ -1115,7 +1115,7 @@ $array = Arr::add(['name' => 'Desk', 'price' => null], 'price', 100);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['orders' => ['desk' => ['price' => 100]]];
  
@@ -1130,7 +1130,7 @@ The Arr::shuffle method randomly shuffles the items in the array:
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = Arr::shuffle([1, 2, 3, 4, 5]);
  
@@ -1141,7 +1141,7 @@ $array = Arr::shuffle([1, 2, 3, 4, 5]);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
 $array = Arr::collapse([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
  
 // [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -1154,7 +1154,7 @@ array:
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 [$keys, $values] = Arr::divide(['name' => 'Desk']);
  
@@ -1167,7 +1167,7 @@ array:
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['name' => 'Desk', 'price' => 100];
  
@@ -1180,7 +1180,7 @@ $filtered = Arr::except($array, ['price']);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['name' => 'Desk', 'price' => 100];
 $array = ['name' => 'John Doe', 'age' => 17];
@@ -1198,7 +1198,7 @@ $exists = Arr::exists($array, 'salary');
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['name' => 'Joe', 'languages' => ['PHP', 'Ruby']];
  
@@ -1213,7 +1213,7 @@ $flattened = Arr::flatten($array);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['products' => ['desk' => ['price' => 100]]];
  
@@ -1226,7 +1226,7 @@ Arr::forget($array, 'products.desk');
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['products' => ['desk' => ['price' => 100]]];
  
@@ -1239,7 +1239,7 @@ $price = Arr::get($array, 'products.desk.price');
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['product' => ['name' => 'Desk', 'price' => 100]];
  
@@ -1256,7 +1256,7 @@ $contains = Arr::has($array, ['product.price', 'product.discount']);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['product' => ['name' => 'Desk', 'price' => 100]];
  
@@ -1277,7 +1277,7 @@ $contains = Arr::hasAny($array, ['category', 'product.discount']);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $isAssoc = Arr::isAssoc(['product' => ['name' => 'Desk', 'price' => 100]]);
  
@@ -1292,7 +1292,7 @@ $isAssoc = Arr::isAssoc([1, 2, 3]);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['one', 'two', 'three', 'four'];
  
@@ -1311,7 +1311,7 @@ $array = Arr::prepend($array, 'Desk', 'name');
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = [
     ['product' => ['id' => 1, 'name' => 'Drink']],
@@ -1327,7 +1327,7 @@ $names = Arr::pluck($array, 'product.name');
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['name' => 'Desk', 'price' => 100, 'orders' => 10];
  
@@ -1340,7 +1340,7 @@ $slice = Arr::only($array, ['name', 'price']);
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = ['name' => 'Desk', 'price' => 100];
  
@@ -1355,7 +1355,7 @@ $name = Arr::pull($array, 'name');
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = [
     'name' => 'Mike',
@@ -1374,7 +1374,7 @@ $array = [
 
 ```php
 <?php
- use Fort\PHP\Arr;
+ use Velstack\PHP\Arr;
  
 $array = [1, 2, 3, 4, 5];
  
@@ -1399,7 +1399,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Support\SMS;
+ use Velstack\PHP\Support\SMS;
  
  return SMS::send('+233205550368', 'Hello, API messaging is just awesome');
 ```
@@ -1410,7 +1410,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::percentage(1.5, 200);
  // 3
@@ -1421,7 +1421,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::expo(2, 2);
  // 4
@@ -1431,7 +1431,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::sqrRoot(20);
   // 4.4721359549996
@@ -1441,7 +1441,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::sum(11, 11);
  // 22
@@ -1451,7 +1451,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::sub(10, 11);
  // -1
@@ -1461,7 +1461,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::div(19, 5);
  // 3.8
@@ -1471,7 +1471,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::mul(21, 8);
  // 168
@@ -1481,7 +1481,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::max(2, 6, 4);
  // 6
@@ -1491,7 +1491,7 @@ SMS_SENDER_ID=BUSINESS
 
 ```php
 <?php
- use Fort\PHP\Math;
+ use Velstack\PHP\Math;
  
  Math::min(2, 6, 4);
  // 2
@@ -1505,7 +1505,7 @@ SMS_SENDER_ID=BUSINESS
 
 namespace App\Models;
 
-use Fort\Illuminate\Support\Eloquent\DateFilters;
+use Velstack\Illuminate\Support\Eloquent\DateFilters;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

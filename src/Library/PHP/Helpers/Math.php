@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Fort\PHP;
+namespace Velstack\PHP;
 
-use Fort\Exception\LogicException;
+use Velstack\Exception\LogicException;
 
 class Math
 {

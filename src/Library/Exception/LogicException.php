@@ -1,8 +1,8 @@
 <?php
 
 
-namespace Fort\Exception;
-use Fort\Handler\ErrorHandler;
+namespace Velstack\Exception;
+use Velstack\Handler\ErrorHandler;
 
 class LogicException extends ErrorHandler
 {

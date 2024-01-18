@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Fort\PHP\Support;
+namespace Velstack\PHP\Support;
 
 
-use Fort\PHP\Components\Contracts\SMS\Transporter;
+use Velstack\PHP\Components\Contracts\SMS\Transporter;
 
 
 /**

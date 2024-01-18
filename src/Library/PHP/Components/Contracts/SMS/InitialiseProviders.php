@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\PHP\Contracts\SMS;
+namespace Velstack\PHP\Contracts\SMS;
 
 
 use Fort\PHP\Support\Http;

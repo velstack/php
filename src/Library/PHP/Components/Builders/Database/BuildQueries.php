@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\PHP\Builders\Database;
+namespace Velstack\PHP\Builders\Database;
 
 
 class BuildQueries

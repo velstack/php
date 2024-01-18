@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Fort\PHP\Builders;
+namespace Velstack\PHP\Builders;
 
 
-use Fort\PHP\Http\Controller;
-use Fort\PHP\Http\Request;
-use Fort\PHP\Http\Response;
+use Velstack\PHP\Http\Controller;
+use Velstack\PHP\Http\Request;
+use Velstack\PHP\Http\Response;
 
 class Application
 {
@@ -18,7 +18,7 @@ class Application
     public Controller $controller;
 
     /**
-     * @return \Fort\PHP\Http\Controller
+     * @return \Velstack\PHP\Http\Controller
      */
     public function getController(): Controller
     {
@@ -26,7 +26,7 @@ class Application
     }
 
     /**
-     * @param \Fort\PHP\Http\Controller $controller
+     * @param \Velstack\PHP\Http\Controller $controller
      */
     public function setController(Controller $controller): void
     {

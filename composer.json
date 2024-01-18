@@ -1,12 +1,12 @@
 {
-  "name": "fort/php",
-  "description": "PHP Global helpers",
+  "name": "velstack/php",
+  "description": "PHP Global Package",
   "type": "library",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Fort\\": "src/Library/",
-      "Fort\\PHP\\": [
+      "Velstack\\": "src/Library/",
+      "Velstack\\PHP\\": [
         "src/Library/PHP/",
         "src/Library/Framework/Laravel/",
         "src/Library/PHP/Components/",

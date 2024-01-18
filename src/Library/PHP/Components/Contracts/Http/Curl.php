@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\PHP\Components\Contracts\Http;
+namespace Velstack\PHP\Components\Contracts\Http;
 
 
 class Curl

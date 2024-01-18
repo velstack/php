@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Fort\PHP\Support;
+namespace Velstack\PHP\Support;
 
 
-use Fort\PHP\Contracts\Http\Fort;
+use Velstack\PHP\Contracts\Http\Fort;
 
 /**
  * @method static get(string $uri, array $headers = null, array $config = null)()

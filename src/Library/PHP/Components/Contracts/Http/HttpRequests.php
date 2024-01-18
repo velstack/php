@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Fort\PHP\Contracts\Http;
+namespace Velstack\PHP\Contracts\Http;
 
 
-use Fort\PHP\Components\Contracts\Http\Curl;
+use Velstack\PHP\Components\Contracts\Http\Curl;
 
 trait HttpRequests
 {

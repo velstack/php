@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\PHP\Contracts\Http;
+namespace Velstack\PHP\Contracts\Http;
 
 
 

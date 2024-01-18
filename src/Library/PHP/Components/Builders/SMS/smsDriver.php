@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Fort\PHP\Builders\SMS;
+namespace Velstack\PHP\Builders\SMS;
 
 
 use Exception;
-use Fort\PHP\Contracts\SMS\InitialiseProviders as Providers;
+use Velstack\PHP\Contracts\SMS\InitialiseProviders as Providers;
 
 
 

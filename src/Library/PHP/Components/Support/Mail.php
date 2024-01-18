@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Fort\PHP\Support;
+namespace Velstack\PHP\Support;
 
 
-use Fort\PHP\Builders\Mailer\Mailer;
-use Fort\Exception\ErrorHandler;
+use Velstack\PHP\Builders\Mailer\Mailer;
+use Velstack\Exception\ErrorHandler;
 
 
 class Mail extends ErrorHandler

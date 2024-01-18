@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\PHP\Http;
+namespace Velstack\PHP\Http;
 
 
 class Response

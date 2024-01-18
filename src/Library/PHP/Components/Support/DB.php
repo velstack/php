@@ -1,8 +1,8 @@
 <?php
 
 
-namespace Fort\PHP\Support;
-use Fort\PHP\Contracts\Database\Fort as Component;
+namespace Velstack\PHP\Support;
+use Velstack\PHP\Contracts\Database\Fort as Component;
 
 
 

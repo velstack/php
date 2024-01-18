@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fort\PHP\Elevators;
+namespace Velstack\PHP\Elevators;
 
 
 interface ContextualBindingBuilder
@@ -10,7 +10,7 @@ interface ContextualBindingBuilder
      * Define the abstract target that depends on the context.
      *
      * @param  string  $abstract
-     * @return \Fort\PHP\Elevators\ContextualBindingBuilder
+     * @return \Velstack\PHP\Elevators\ContextualBindingBuilder
      */
     public function needs($abstract);
 
